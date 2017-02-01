@@ -44,7 +44,7 @@ row = 4
 # while loop --> end when column 6 is empty (Description)
 # do i care that all rows are not unique to single patient? I don't think so
 # in SQL we can do a search for a user and be fine (no duplicates either)
-while(sheet1.cell(row,6) != '')
+while(sheet1.cell(row,6) != ''):
     # init variables
     patient = {}
     hygiene_dep = 0
@@ -63,13 +63,13 @@ while(sheet1.cell(row,6) != '')
 
     #collection - sum of cash, check, Credit
     patient['collection'] = 0
-    if(sheet1.cell(row,10) != '')
+    if(sheet1.cell(row,10) != ''):
         patient['collection'] += sheet1.cell(row,10).value
 
-    if(sheet1.cell(row,11) != '')
+    if(sheet1.cell(row,11) != ''):
         patient['collection'] += sheet1.cell(row,11).value
 
-    if(sheet1.cell(row,12) != '')
+    if(sheet1.cell(row,12) != ''):
         patient['collection'] += sheet1.cell(row,12).value
 
 
