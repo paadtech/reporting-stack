@@ -7,10 +7,8 @@ This architecture will allow for much easier viewing and editing on the part of 
 of the PAAD.tech@gmail.com account
 
 
-Sheet 1:
-Sheet 2: Provider Summary
-Sheet 3: Deposit Slip
-Sheet 4: Credit Card Slips to deposit
+Sheet 1: This is the only sheet we use of all of the sheets provided -- it has the most raw data where
+we can derive all other data
 """
 
 

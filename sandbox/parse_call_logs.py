@@ -13,6 +13,19 @@ from datetime import datetime
 import os # used to access files
 import glob # used to grab items
 
+
+# include methods here to call later in scripts
+def removeFiles():
+    files = [f for f in os.listdir('.') if os.path.isfile(f)]
+        # for all the files in the folder that are an excel sheet
+        for file in files:
+            # If the files have a .xls
+            if ".csv" in file and 'master' not in file:
+                os.remove(file)
+
+
+
+
 #### define needed function to initlize dictionary for every unique date found
 def initializeDict():
     temp = {}
@@ -44,10 +57,17 @@ yes_checks = ["y", "yes"]
 
 
 # create path to file name
-# TODO: this will change on the server
-# TODO: number of files we grab will also change
-os.chdir("/Users/paulstavropoulos/Google Drive/kouvaya/reporting-stack/example_docs")
-call_logs = glob.glob("*.csv")
+# os.chdir("/Users/paulstavropoulos/Google Drive/kouvaya/reporting-stack/example_docs")
+#grab all .csvs, except if they have the string "master"
+call_logs = []
+allfiles = [f for f in os.listdir('.') if os.path.isfile(f)]
+    # for all the files in the folder that are an excel sheet
+    for file in allfiles:
+        # If the files have a .xls
+        if ".csv" in file and 'master' not in file:
+            call_logs.push(file)
+
+
 
 
 #loop through all items
@@ -165,3 +185,6 @@ for item in call_logs:
 
 #close writer
 skeleton.close()
+
+# remove the same files that we have just parseDaysheet
+removeFiles()
